@@ -1,0 +1,9 @@
+A little helper object to allow for saving of a canvas tag to an image. It uses a server side script to save the image to avoid things like not being able to set a filename, and popping up scary looking dialogue boxes. For more in-depth explanation and example, see: http://greenethumb.com/article/1429/user-friendly-image-saving-from-the-canvas/
+
+quick impl example:
+
+<script src="./canvassaver.js">
+<script>
+var cs = new CanvasSaver('./saveme.php')
+cs.generateButton('save an image!', cnvs, 'myimage');
+</script>
