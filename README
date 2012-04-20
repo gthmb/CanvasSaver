@@ -6,6 +6,7 @@ quick impl example:
 <script src="./canvassaver.js">
 <script>
 var cnvs = document.getElementById('drawhere');
+var cs = new CanvasSaver('./saveme.php')
 var btn = cs.generateButton('save an image!', cnvs, 'myimage');
 document.appendChild(btn);
 </script>
