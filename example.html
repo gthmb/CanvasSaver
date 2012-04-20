@@ -6,8 +6,10 @@
 	<body>
 		<canvas id="drawhere" width="600" height="300" style="border: 1px solid #ccc"></canvas>
 		<script>
+			// get canvas reference
 			var cnvs = document.getElementById('drawhere');
 			
+			// draw some stuff on the canavs
 			var ctx = cnvs.getContext('2d');
 			ctx.fillStyle='#ffffff';
 			ctx.beginPath();
@@ -15,6 +17,7 @@
 			ctx.fill();
 			ctx.closePath();
 			ctx.strokeStyle = '#996600';
+			
 			for(var i=0; i<1000; i++) {
 				ctx.beginPath();
 				ctx.arc(Math.random()*900, Math.random()*300, Math.random()*40+20, 0, 6.28);
@@ -22,6 +25,7 @@
 				ctx.closePath();
 			}
 			
+			// create the saver, and add the button to the DOM
 			var cs = new CanvasSaver('./saveme.php')
 			var btn = cs.generateButton('save an image!', cnvs, 'myimage');
 			document.body.appendChild(btn);
