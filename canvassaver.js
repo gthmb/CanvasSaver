@@ -34,8 +34,6 @@ function CanvasSaver(url) {
 		btn.style['class'] = 'canvassaver';
 		btn.addEventListener('click', function(){scope.savePNG(cnvs, fname);}, false);
 		
-		document.body.appendChild(btn);
-		
 		return btn;
 	};
 }

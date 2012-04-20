@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>CanvasSaver example</title>
+		<script src="./canvassaver.js"></script>
+	</head>
+	<body>
+		<canvas id="drawhere" width="600" height="300" style="border: 1px solid #ccc"></canvas>
+		<script>
+			var cnvs = document.getElementById('drawhere');
+			
+			var ctx = cnvs.getContext('2d');
+			ctx.fillStyle='#ffffff';
+			ctx.beginPath();
+			ctx.rect(0,0,900,300);
+			ctx.fill();
+			ctx.closePath();
+			ctx.strokeStyle = '#996600';
+			for(var i=0; i<1000; i++) {
+				ctx.beginPath();
+				ctx.arc(Math.random()*900, Math.random()*300, Math.random()*40+20, 0, 6.28);
+				ctx.stroke();
+				ctx.closePath();
+			}
+			
+			var cs = new CanvasSaver('./saveme.php')
+			var btn = cs.generateButton('save an image!', cnvs, 'myimage');
+			document.body.appendChild(btn);
+		</script>
+	</body>
+</html>
