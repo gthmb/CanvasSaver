@@ -10,8 +10,9 @@ function CanvasSaver(url) {
 		data = data.substr(data.indexOf(',') + 1).toString();
 		
 		var dataInput = document.createElement("input") ;
-		dataInput.setAttribute("name", 'imgdata') ;
+		dataInput.setAttribute("name", "imgdata") ;
 		dataInput.setAttribute("value", data);
+		dataInput.setAttribute("type", "hidden");
 		
 		var nameInput = document.createElement("input") ;
 		nameInput.setAttribute("name", 'name') ;
